@@ -27,14 +27,13 @@ void DelListNode(LinkList * L,LinkList * p){
 	//提高代码鲁棒性
 	if(!L || !p)
 		return
-	if(L->next!=NULL){
+	if(p->next!=NULL){
 		//P 非头非尾结点
-		LinkList * pNext=p-next;
+		LinkList * pNext=p->next;
 		p->data=pNext->data;
 		p->next=pNext->next;
 		free(pNext);
-	}
-	else if (L==p){
+	}else if (L==p){
 		//P为头结点
 		free(L);
 	}else{
